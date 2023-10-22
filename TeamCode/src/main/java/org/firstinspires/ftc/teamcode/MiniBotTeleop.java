@@ -29,6 +29,8 @@ public class MiniBotTeleop extends LinearOpMode{
     {
         robot.init(hardwareMap,this);
 
+        robot.autopixel.setPosition(0.3);
+
 
         waitForStart();
 
@@ -71,25 +73,27 @@ public class MiniBotTeleop extends LinearOpMode{
             if (gamepad1.dpad_down) turnControl = 0.25;
 
 
+            if (gamepad1.a) robot.plane.setPower(-1);
+            else robot.plane.setPower(0);
+
+
+            if(gamepad2.dpad_up) robot.autopixel.setPosition(0.4);
+            if(gamepad2.dpad_down) robot.autopixel.setPosition(0);
+
+
+
+
 /*
-            if (gamepad2.a) robot.wrist.setPosition(0);
-            if (gamepad2.b) robot.wrist.setPosition(0.3);
-            if (gamepad2.x) robot.wrist.setPosition(0.7);
-            if (gamepad2.y) robot.wrist.setPosition(1);
-
-
-             */
-
-
-
             if (gamepad2.dpad_up)  wristPosition = 0.0;
             if (gamepad2.dpad_right) wristPosition = 0.5;
             if (gamepad2.dpad_left) wristPosition = 0.6;
             if (gamepad2.dpad_down) wristPosition = 1;
             if(gamepad2.left_bumper) wristPosition= 0.6-Math.abs(gamepad2.right_stick_y)*0.6;
-            robot.wrist.setPosition(wristPosition);
 
-            robot.arm.setPower(gamepad2.left_stick_y*0.3);
+
+            robot.wrist.setPosition(wristPosition);
+*/
+
 
 
 

@@ -38,8 +38,9 @@ public class minibot {
     public DcMotor motorBack;
     public DcMotor motorLeft;
     public DcMotor motorRight;
-    public DcMotor arm;
-    public Servo wrist;
+
+    public Servo autopixel;
+    public CRServo plane;
     private ElapsedTime     runtime = new ElapsedTime();
 
     BNO055IMU imu;
@@ -73,8 +74,8 @@ public class minibot {
         motorLeft = hwMap.dcMotor.get("motorLeft");
         motorRight =hwMap.dcMotor.get("motorRight");
 
-        arm = hwMap.dcMotor.get("arm");
-        wrist = hwMap.servo.get("wrist");
+        autopixel = hwMap.servo.get("autopixel");
+        plane = hwMap.crservo.get("plane");
 
 
 
@@ -86,7 +87,6 @@ public class minibot {
         motorRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         motorLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         motorBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;
         imu = hwMap.get(BNO055IMU.class, "imu");
@@ -307,11 +307,13 @@ public class minibot {
 
         angles=imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
         Thread.sleep(500);
-       // motorFront.setPower(speed);
-        motorRight.setPower(speed);
-       // motorLeft.setPower(-speed);
-        //motorBack.setPower(-speed);
-        while (angles.firstAngle < angleReading && !opmode.isStopRequested()){
+
+        motorFront.setPower(speed);
+        motorRight.setPower(-speed); //positive power moves right
+        motorLeft.setPower(speed); //positive power moves left
+        motorBack.setPower(-speed);
+
+        while (angles.firstAngle > -angleReading && !opmode.isStopRequested()){
             angles=imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
             opmode.telemetry.addData("Heading",angles.firstAngle);
             opmode.telemetry.update();
