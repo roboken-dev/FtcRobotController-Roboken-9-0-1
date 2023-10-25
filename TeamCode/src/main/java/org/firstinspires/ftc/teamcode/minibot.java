@@ -321,24 +321,23 @@ public class minibot {
         stopDriving();
     }
 
-
-/*
-    public void turnRightAngle(double speed,int angleReading, LinearOpMode opmode) throws InterruptedException {
+    public void turnLeftAngle(double speed,int angleReading, LinearOpMode opmode) throws InterruptedException {
 
         angles=imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
         Thread.sleep(500);
-        frontLeft.setPower(-speed);
-        frontRight.setPower(-speed);
-        rearLeft.setPower(speed);
-        rearRight.setPower(speed);
-        while (angles.firstAngle > angleReading && !opmode.isStopRequested()){
+
+        motorFront.setPower(-speed);
+        motorRight.setPower(speed); //positive power moves right
+        motorLeft.setPower(-speed); //positive power moves left
+        motorBack.setPower(speed);
+
+        while (angles.firstAngle < angleReading && !opmode.isStopRequested()){
             angles=imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
             opmode.telemetry.addData("Heading",angles.firstAngle);
             opmode.telemetry.update();
         }
         stopDriving();
     }
-*/
 
 
 }

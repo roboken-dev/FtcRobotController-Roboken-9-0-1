@@ -29,7 +29,7 @@ public class MiniBotTeleop extends LinearOpMode{
     {
         robot.init(hardwareMap,this);
 
-        robot.autopixel.setPosition(0.3);
+        robot.autopixel.setPosition(0.05);
 
 
         waitForStart();
@@ -42,16 +42,16 @@ public class MiniBotTeleop extends LinearOpMode{
             telemetry.update();
 
 
-            if (gamepad1.right_stick_y != 0 || gamepad1.right_stick_x != 0) {
-                robot.motorLeft.setPower((gamepad1.right_stick_x - gamepad1.left_stick_x * 0.35) * speedControl);
-                robot.motorRight.setPower((-gamepad1.right_stick_x - gamepad1.left_stick_x * 0.35) * speedControl);
-                robot.motorFront.setPower((gamepad1.right_stick_y - gamepad1.left_stick_x * 0.35) * speedControl);
-                robot.motorBack.setPower((-gamepad1.right_stick_y - gamepad1.left_stick_x * 0.35) * speedControl);
-            } else if (gamepad1.left_stick_x != 0 || gamepad1.left_stick_y != 0) {
-                robot.motorLeft.setPower(-gamepad1.left_stick_x * turnControl);
-                robot.motorRight.setPower(-gamepad1.left_stick_x * turnControl);
-                robot.motorFront.setPower(-gamepad1.left_stick_x * turnControl);
-                robot.motorBack.setPower(-gamepad1.left_stick_x * turnControl);
+            if (gamepad1.left_stick_y != 0 || gamepad1.left_stick_x != 0) {
+                robot.motorLeft.setPower((gamepad1.left_stick_x - gamepad1.right_stick_x * 0.35) * speedControl);
+                robot.motorRight.setPower((-gamepad1.left_stick_x - gamepad1.right_stick_x * 0.35) * speedControl);
+                robot.motorFront.setPower((gamepad1.left_stick_y - gamepad1.right_stick_x * 0.35) * speedControl);
+                robot.motorBack.setPower((-gamepad1.left_stick_y - gamepad1.right_stick_x * 0.35) * speedControl);
+            } else if (gamepad1.right_stick_x != 0 || gamepad1.left_stick_y != 0) {
+                robot.motorLeft.setPower(-gamepad1.right_stick_x * turnControl);
+                robot.motorRight.setPower(-gamepad1.right_stick_x * turnControl);
+                robot.motorFront.setPower(-gamepad1.right_stick_x * turnControl);
+                robot.motorBack.setPower(-gamepad1.right_stick_x * turnControl);
             } else {
 
                 robot.motorLeft.setPower(0);
@@ -76,9 +76,9 @@ public class MiniBotTeleop extends LinearOpMode{
             if (gamepad1.a) robot.plane.setPower(-1);
             else robot.plane.setPower(0);
 
+            if (gamepad1.b) robot.autopixel.setPosition(0.5);
+            if (gamepad1.x) robot.autopixel.setPosition(0.05);
 
-            if(gamepad2.dpad_up) robot.autopixel.setPosition(0.4);
-            if(gamepad2.dpad_down) robot.autopixel.setPosition(0);
 
 
 

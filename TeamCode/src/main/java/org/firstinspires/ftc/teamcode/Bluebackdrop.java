@@ -23,6 +23,7 @@ public class Bluebackdrop extends LinearOpMode {
 		// this is tuned to detect red, so you will need to experiment to fine tune it for your robot
 		// and experiment to fine tune it for blue
 		robot.init(hardwareMap, this);
+		robot.autopixel.setPosition(0);
 		Scalar lower = new Scalar(100, 100, 100); // the lower hsv threshold for your detection
 		Scalar upper = new Scalar(130, 255, 255); // the upper hsv threshold for your detection
 		double minArea = 100; // the minimum area for the detection to consider for your prop
@@ -83,7 +84,7 @@ public class Bluebackdrop extends LinearOpMode {
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,-27,5,this);
 				robot.encoderSideDrive(0.25,13,5,this);
-				/*robot.turnRightAngle(-0.2,-89,this);
+				robot.turnLeftAngle(-0.2,-89,this);
 				robot.encoderForwardDrive(0.25,10,5,this);
 				robot.encoderSideDrive(0.25,17,5,this);
 				robot.encoderForwardDrive(0.25,32.5,5,this);
@@ -92,7 +93,6 @@ public class Bluebackdrop extends LinearOpMode {
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(-0.25,-2,5,this);
 				robot.encoderSideDrive(0.2,24,5,this);
-*/
 				robot.encoderForwardDrive(-0.25,-2,5,this);
 				break;
 
@@ -106,7 +106,7 @@ public class Bluebackdrop extends LinearOpMode {
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,34,5,this);
 				robot.encoderSideDrive(0.25,0,5,this);
-				/*robot.turnRightAngle(-0.2,-90,this);
+				robot.turnLeftAngle(-0.2,-90,this);
 				robot.encoderForwardDrive(0.25,42.5,5,this);
 				robot.encoderSideDrive(0.25,10,5,this);
 				robot.autopixel.setPosition(0.45);
@@ -114,7 +114,6 @@ public class Bluebackdrop extends LinearOpMode {
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(-0.25,-2,5,this);
 				robot.encoderSideDrive(0.2,24,5,this);
-*/
 				robot.encoderForwardDrive(-0.25,-2,5,this);
 				break;
 
@@ -125,7 +124,7 @@ public class Bluebackdrop extends LinearOpMode {
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,-27,5,this);
 				robot.encoderSideDrive(0.25,14,5,this);
-				/*robot.turnRightAngle(-0.2,-89,this);
+				robot.turnLeftAngle(-0.2,-89,this);
 				robot.encoderForwardDrive(0.25,20,5,this);
 				robot.encoderSideDrive(0.25,17,5,this);
 				robot.encoderForwardDrive(0.25,36.5,5,this);
@@ -134,7 +133,6 @@ public class Bluebackdrop extends LinearOpMode {
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(-0.25,-2,5,this);
 				robot.encoderSideDrive(0.2,24,5,this);
-*/
 				robot.encoderForwardDrive(-0.25,-2,5,this);
 
 
