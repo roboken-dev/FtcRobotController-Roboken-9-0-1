@@ -1,20 +1,11 @@
 package org.firstinspires.ftc.teamcode;
-import android.graphics.Color;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.CRServo;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Servo;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
+@TeleOp(name="MiniTeleopClaire")
 
-import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
-
-@TeleOp(name="MiniTeleop")
-
-public class MiniBotTeleop extends LinearOpMode{
+public class MiniBotTeleopClaire extends LinearOpMode{
 
     minibot robot = new minibot();
 
@@ -42,16 +33,16 @@ public class MiniBotTeleop extends LinearOpMode{
             telemetry.update();
 
 
-            if (gamepad1.left_stick_y != 0 || gamepad1.left_stick_x != 0) {
-                robot.motorLeft.setPower((gamepad1.left_stick_x - gamepad1.right_stick_x * 0.35) * speedControl);
-                robot.motorRight.setPower((-gamepad1.left_stick_x - gamepad1.right_stick_x * 0.35) * speedControl);
-                robot.motorFront.setPower((gamepad1.left_stick_y - gamepad1.right_stick_x * 0.35) * speedControl);
-                robot.motorBack.setPower((-gamepad1.left_stick_y - gamepad1.right_stick_x * 0.35) * speedControl);
-            } else if (gamepad1.right_stick_x != 0 || gamepad1.left_stick_y != 0) {
-                robot.motorLeft.setPower(-gamepad1.right_stick_x * turnControl);
-                robot.motorRight.setPower(-gamepad1.right_stick_x * turnControl);
-                robot.motorFront.setPower(-gamepad1.right_stick_x * turnControl);
-                robot.motorBack.setPower(-gamepad1.right_stick_x * turnControl);
+            if (gamepad1.right_stick_y != 0 || gamepad1.right_stick_x != 0) {
+                robot.motorLeft.setPower((gamepad1.right_stick_x - gamepad1.left_stick_x * 0.35) * speedControl);
+                robot.motorRight.setPower((-gamepad1.right_stick_x - gamepad1.left_stick_x * 0.35) * speedControl);
+                robot.motorFront.setPower((gamepad1.right_stick_y - gamepad1.left_stick_x * 0.35) * speedControl);
+                robot.motorBack.setPower((-gamepad1.right_stick_y - gamepad1.left_stick_x * 0.35) * speedControl);
+            } else if (gamepad1.left_stick_x != 0 || gamepad1.right_stick_y != 0) {
+                robot.motorLeft.setPower(-gamepad1.left_stick_x * turnControl);
+                robot.motorRight.setPower(-gamepad1.left_stick_x * turnControl);
+                robot.motorFront.setPower(-gamepad1.left_stick_x * turnControl);
+                robot.motorBack.setPower(-gamepad1.left_stick_x * turnControl);
             } else {
 
                 robot.motorLeft.setPower(0);

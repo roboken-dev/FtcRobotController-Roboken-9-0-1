@@ -84,16 +84,17 @@ public class Bluebackdrop extends LinearOpMode {
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,-27,5,this);
 				robot.encoderSideDrive(0.25,13,5,this);
-				robot.turnLeftAngle(-0.2,-89,this);
-				robot.encoderForwardDrive(0.25,10,5,this);
-				robot.encoderSideDrive(0.25,17,5,this);
-				robot.encoderForwardDrive(0.25,32.5,5,this);
+				robot.turnLeftAngle(0.2,89,this);
+				robot.encoderForwardDrive(0.25,20,5,this);
+				robot.encoderSideDrive(0.25,27,5,this);
+				robot.encoderForwardDrive(0.25,36.5,5,this);
 				robot.autopixel.setPosition(0.45);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(-0.25,-2,5,this);
 				robot.encoderSideDrive(0.2,24,5,this);
-				robot.encoderForwardDrive(-0.25,-2,5,this);
+
+
 				break;
 
 
@@ -106,15 +107,17 @@ public class Bluebackdrop extends LinearOpMode {
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,34,5,this);
 				robot.encoderSideDrive(0.25,0,5,this);
-				robot.turnLeftAngle(-0.2,-90,this);
-				robot.encoderForwardDrive(0.25,42.5,5,this);
-				robot.encoderSideDrive(0.25,10,5,this);
+				robot.turnLeftAngle(0.2,90,this);
+				robot.encoderForwardDrive(0.25,30,5,this);
+				robot.encoderSideDrive(0.25,18,5,this);
+				robot.encoderForwardDrive(0.25,10.5,5,this);
 				robot.autopixel.setPosition(0.45);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(-0.25,-2,5,this);
-				robot.encoderSideDrive(0.2,24,5,this);
-				robot.encoderForwardDrive(-0.25,-2,5,this);
+				robot.encoderSideDrive(0.2,-35,5,this);
+
+
 				break;
 
 
@@ -124,15 +127,15 @@ public class Bluebackdrop extends LinearOpMode {
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,-27,5,this);
 				robot.encoderSideDrive(0.25,14,5,this);
-				robot.turnLeftAngle(-0.2,-89,this);
-				robot.encoderForwardDrive(0.25,20,5,this);
+				robot.turnLeftAngle(0.2,89,this);
+				robot.encoderForwardDrive(0.25,10,5,this);
 				robot.encoderSideDrive(0.25,17,5,this);
-				robot.encoderForwardDrive(0.25,36.5,5,this);
+				robot.encoderForwardDrive(0.25,32.5,5,this);
 				robot.autopixel.setPosition(0.45);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(-0.25,-2,5,this);
-				robot.encoderSideDrive(0.2,24,5,this);
+				robot.encoderSideDrive(-0.2,-24,5,this);
 				robot.encoderForwardDrive(-0.25,-2,5,this);
 
 
