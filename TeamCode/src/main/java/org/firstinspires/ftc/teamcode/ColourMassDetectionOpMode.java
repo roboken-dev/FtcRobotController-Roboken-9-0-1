@@ -9,6 +9,7 @@ import org.firstinspires.ftc.vision.VisionPortal;
 import org.opencv.core.Scalar;
 
 
+@Disabled
 @Autonomous(name="color")
 
 public class ColourMassDetectionOpMode extends OpMode {

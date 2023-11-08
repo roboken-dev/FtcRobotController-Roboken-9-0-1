@@ -81,7 +81,7 @@ public class Redbackdrop extends LinearOpMode {
 				// code to do if we saw the prop on the left
 				telemetry.addData("movement: ", "I will go left");
 				telemetry.update();
-				robot.encoderForwardDrive(0.25,27,5,this);
+				robot.encoderForwardDrive(0.25,28.5,5,this);
 				robot.encoderSideDrive(0.25,12.5,5,this);
 
 				/*
@@ -93,14 +93,14 @@ public class Redbackdrop extends LinearOpMode {
 				*/
 
 				//this is alternate
-				robot.encoderForwardDrive(-0.25,-6,5,this);
-				robot.encoderSideDrive(0.25,12,5,this);
+				robot.encoderForwardDrive(-0.25,-3.5,5,this);
+				robot.encoderSideDrive(-0.25,-12,5,this);
 				robot.turnRightAngle(0.2,89,this);
 				robot.encoderForwardDrive(0.25,8,5,this);
 
 				//rest we had before
-				robot.encoderSideDrive(0.25,27,5,this);
-				robot.encoderForwardDrive(0.25,36.5,5,this);
+				robot.encoderSideDrive(0.25,22,5,this);
+				robot.encoderForwardDrive(0.25,35.5,5,this);
 				robot.autopixel.setPosition(0.45);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
