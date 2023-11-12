@@ -8,8 +8,8 @@ import org.firstinspires.ftc.vision.VisionPortal;
 import org.opencv.core.Scalar;
 
 
-@Autonomous(name="Audience Either Color")
-public class AudienceEitherColor extends LinearOpMode {
+@Autonomous(name="Audience Blue")
+public class AudienceBlue extends LinearOpMode {
 	private VisionPortal visionPortal;
 	private ColourMassDetectionProcessor colourMassDetectionProcessor;
 	minibot robot = new minibot();
@@ -85,9 +85,7 @@ public class AudienceEitherColor extends LinearOpMode {
 
 				robot.encoderForwardDrive(0.25,27,5,this);
 				robot.encoderSideDrive(0.25,12.5,5,this);
-				robot.encoderForwardDrive(-0.25,-4,5,this);
-
-
+				robot.encoderForwardDrive(-0.25,-2,5,this);
 
 
 				break;
@@ -104,7 +102,6 @@ public class AudienceEitherColor extends LinearOpMode {
 				robot.encoderForwardDrive(-0.25,-4,5,this);
 
 
-
 				break;
 
 
@@ -118,7 +115,6 @@ public class AudienceEitherColor extends LinearOpMode {
 
 
 				break;
-
 
 
 		}
