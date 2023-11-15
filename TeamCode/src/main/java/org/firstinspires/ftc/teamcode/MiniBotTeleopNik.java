@@ -64,7 +64,7 @@ public class MiniBotTeleopNik extends LinearOpMode{
             if (gamepad1.dpad_down) turnControl = 0.25;
 
 
-            if (gamepad1.a) robot.plane.setPower(-1);
+            if (gamepad1.y) robot.plane.setPower(-1);
             else robot.plane.setPower(0);
 
             if (gamepad1.b) robot.autopixel.setPosition(0.5);

@@ -22,9 +22,9 @@ public class AudienceRed extends LinearOpMode {
 		// the domains are: ([0, 180], [0, 255], [0, 255])
 		// this is tuned to detect red, so you will need to experiment to fine tune it for your robot
 		// and experiment to fine tune it for blue
-		robot.init(hardwareMap, this);
+		robot.init(hardwareMap,this);
 		robot.autopixel.setPosition(0);
-		Scalar lower = new Scalar(150, 100, 100); // the lower hsv threshold for your detection
+		Scalar lower = new Scalar(160, 100, 100); // the lower hsv threshold for your detection
 		Scalar upper = new Scalar(180, 255, 255); // the upper hsv threshold for your detection
 		double minArea = 100; // the minimum area for the detection to consider for your prop
 		
