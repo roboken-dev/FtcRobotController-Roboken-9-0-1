@@ -24,8 +24,8 @@ public class Redbackdrop extends LinearOpMode {
 		// and experiment to fine tune it for blue
 		robot.init(hardwareMap, this);
 		robot.autopixel.setPosition(0);
-		Scalar lower = new Scalar(150, 100, 100); // the lower hsv threshold for your detection
-		Scalar upper = new Scalar(180, 255, 255); // the upper hsv threshold for your detection
+		Scalar lower = new Scalar(0, 100, 100); // the lower hsv threshold for your detection
+		Scalar upper = new Scalar(10, 255, 255); // the upper hsv threshold for your detection
 		double minArea = 100; // the minimum area for the detection to consider for your prop
 		
 		colourMassDetectionProcessor = new ColourMassDetectionProcessor(
