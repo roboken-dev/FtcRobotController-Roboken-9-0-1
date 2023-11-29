@@ -7,8 +7,8 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.opencv.core.Scalar;
 
-@Autonomous(name="AudienceRed")
-public class AudienceRed extends LinearOpMode {
+@Autonomous(name="Bluebackdrop2")
+public class Bluebackdrop2 extends LinearOpMode {
 	private VisionPortal visionPortal;
 	private ColourMassDetectionProcessor colourMassDetectionProcessor;
 	minibot robot = new minibot();
@@ -24,8 +24,8 @@ public class AudienceRed extends LinearOpMode {
 		// and experiment to fine tune it for blue
 		robot.init(hardwareMap, this);
 		robot.autopixel.setPosition(0);
-		Scalar lower = new Scalar(0, 100, 100); // the lower hsv threshold for your detection
-		Scalar upper = new Scalar(10, 255, 255); // the upper hsv threshold for your detection
+		Scalar lower = new Scalar(100, 100, 100); // the lower hsv threshold for your detection
+		Scalar upper = new Scalar(130, 255, 255); // the upper hsv threshold for your detection
 		double minArea = 100; // the minimum area for the detection to consider for your prop
 		
 		colourMassDetectionProcessor = new ColourMassDetectionProcessor(
@@ -46,6 +46,7 @@ public class AudienceRed extends LinearOpMode {
 		// these may be extra features for you to work on to ensure that your robot performs
 		// consistently, even in different environments
 
+	
 
 
 	 while (!isStarted()) {
@@ -81,9 +82,24 @@ public class AudienceRed extends LinearOpMode {
 				// code to do if we saw the prop on the left
 				telemetry.addData("movement: ", "I will go left");
 				telemetry.update();
-				robot.encoderForwardDrive(0.25,28.5,5,this);
-				robot.encoderSideDrive(0.25,12.5,5,this);
-				robot.encoderForwardDrive(-0.25,-3.5,5,this);
+
+				robot.encoderForwardDrive(0.25,27,5,this);
+				robot.encoderSideDrive(0.25,11.5,5,this);
+				robot.encoderForwardDrive(-0.25,-10,5,this);
+
+				//robot.turnLeftAngle(0.2,89,this);
+				robot.turnRightAngle(0.2,89,this);
+
+
+				//changed sign of speed and inches from this point forward
+				robot.encoderForwardDrive(-0.25,-10,5,this);
+				robot.encoderSideDrive(0.25,2,5,this);
+				robot.encoderForwardDrive(-0.25,-18,5,this);
+				robot.autopixel.setPosition(0.45);
+				sleep(2000);
+				robot.autopixel.setPosition(0);
+				robot.encoderForwardDrive(0.25,2,5,this);
+				robot.encoderSideDrive(-0.2,-24,5,this);
 
 
 				break;
@@ -100,6 +116,17 @@ public class AudienceRed extends LinearOpMode {
 				robot.encoderForwardDrive(-0.25,-10,5,this);
 
 
+				robot.turnRightAngle(0.2,89,this);
+				robot.encoderForwardDrive(-0.25,-30,5,this);
+				//robot.encoderSideDrive(-0.25,2,5,this);
+				robot.encoderForwardDrive(-0.25,-10.5,5,this);
+				robot.autopixel.setPosition(0.45);
+				sleep(2000);
+				robot.autopixel.setPosition(0);
+				robot.encoderForwardDrive(0.25,3,5,this);
+				robot.encoderSideDrive(-0.2,-35,5,this);
+
+
 				break;
 
 
@@ -109,7 +136,21 @@ public class AudienceRed extends LinearOpMode {
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,27,5,this);
 				robot.encoderSideDrive(0.25,-14,5,this);
-				robot.encoderForwardDrive(-0.25,-2,5,this);
+				robot.encoderForwardDrive(-0.25,-3.5,5,this);
+				robot.encoderSideDrive(0.25,12,5,this);
+
+
+				robot.turnRightAngle(0.2,89,this);
+				robot.encoderForwardDrive(-0.25,-8,5,this);
+				robot.encoderSideDrive(0.25,7.5,5,this);
+				robot.encoderForwardDrive(-0.25,-36.5,5,this);
+
+				robot.autopixel.setPosition(0.45);
+				sleep(2000);
+				robot.autopixel.setPosition(0);
+
+				robot.encoderForwardDrive(0.25,2,5,this);
+				robot.encoderSideDrive(-0.2,-24,5,this);
 
 
 				break;

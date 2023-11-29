@@ -64,7 +64,7 @@ public class MiniBotTeleopNik extends LinearOpMode{
             if (gamepad1.dpad_down) turnControl = 0.25;
 
 
-            if (gamepad1.y) robot.plane.setPower(-1);
+            if (gamepad1.y&& gamepad1.left_bumper) robot.plane.setPower(-1);
             else robot.plane.setPower(0);
 
             if (gamepad1.b) robot.autopixel.setPosition(0.5);
@@ -74,7 +74,7 @@ public class MiniBotTeleopNik extends LinearOpMode{
 
 
 
-/*
+
             if (gamepad2.dpad_up)  wristPosition = 0.0;
             if (gamepad2.dpad_right) wristPosition = 0.5;
             if (gamepad2.dpad_left) wristPosition = 0.6;
@@ -83,7 +83,7 @@ public class MiniBotTeleopNik extends LinearOpMode{
 
 
             robot.wrist.setPosition(wristPosition);
-*/
+
 
 
 

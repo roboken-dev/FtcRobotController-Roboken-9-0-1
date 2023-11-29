@@ -40,6 +40,7 @@ public class minibot {
     public DcMotor motorRight;
 
     public Servo autopixel;
+    public Servo wrist;
     public CRServo plane;
     private ElapsedTime     runtime = new ElapsedTime();
 
@@ -75,6 +76,7 @@ public class minibot {
         motorRight =hwMap.dcMotor.get("motorRight");
 
         autopixel = hwMap.servo.get("autopixel");
+        wrist = hwMap.servo.get("wrist");
         plane = hwMap.crservo.get("plane");
 
 
