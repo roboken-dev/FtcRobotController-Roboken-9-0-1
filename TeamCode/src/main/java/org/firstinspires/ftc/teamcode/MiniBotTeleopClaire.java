@@ -12,7 +12,8 @@ public class MiniBotTeleopClaire extends LinearOpMode{
 
     private double speedControl = 0.5;
     private double turnControl = 0.5;
-    double wristPosition = 1;
+    double wristPosition = 0.3;
+
     @Override
 
 
@@ -64,7 +65,7 @@ public class MiniBotTeleopClaire extends LinearOpMode{
             if (gamepad1.dpad_down) turnControl = 0.25;
 
 
-            if (gamepad1.y&&gamepad1.left_bumper) robot.plane.setPower(-1);
+            if (gamepad2.y&&gamepad2.left_bumper) robot.plane.setPower(-1);
             else robot.plane.setPower(0);
 
             if (gamepad1.b) robot.autopixel.setPosition(0.5);
@@ -75,11 +76,13 @@ public class MiniBotTeleopClaire extends LinearOpMode{
 
 
 
-            if (gamepad2.dpad_up)  wristPosition = 0.0;
-            if (gamepad2.dpad_right) wristPosition = 0.5;
-            if (gamepad2.dpad_left) wristPosition = 0.6;
-            if (gamepad2.dpad_down) wristPosition = 1;
-            if(gamepad2.left_bumper) wristPosition= 0.6-Math.abs(gamepad2.right_stick_y)*0.6;
+            if (gamepad2.dpad_up)  wristPosition = 0.5;
+            if (gamepad2.dpad_right) wristPosition = 0.2;
+            if (gamepad2.dpad_left) wristPosition = 0.2;
+            if (gamepad2.dpad_down) wristPosition = 0;
+            if(gamepad2.right_bumper) wristPosition= 0.5-Math.abs(gamepad2.right_stick_y)*0.5;
+
+
             robot.wrist.setPosition(wristPosition);
 
 
