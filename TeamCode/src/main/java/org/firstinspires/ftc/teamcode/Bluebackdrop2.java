@@ -124,7 +124,7 @@ public class Bluebackdrop2 extends LinearOpMode {
 				robot.autopixel.setPosition(0.45);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
-				robot.encoderForwardDrive(0.25,3,5,this);
+				robot.encoderForwardDrive(0.25,5,5,this);
 				robot.encoderSideDrive(-0.2,-35,5,this);
 
 
@@ -136,7 +136,7 @@ public class Bluebackdrop2 extends LinearOpMode {
 				telemetry.addData("movement: ", "I will go right");
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,27,5,this);
-				robot.encoderSideDrive(0.25,-14,5,this);
+				robot.encoderSideDrive(0.25,-12,5,this);
 				robot.encoderForwardDrive(-0.25,-3.5,5,this);
 				robot.encoderSideDrive(0.25,12,5,this);
 
