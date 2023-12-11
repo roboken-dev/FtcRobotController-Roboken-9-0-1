@@ -86,7 +86,7 @@ public class Bluebackdrop2 extends LinearOpMode {
 
 				robot.encoderForwardDrive(0.25,27,5,this);
 				robot.encoderSideDrive(0.25,11.5,5,this);
-				robot.encoderForwardDrive(-0.25,-10,5,this);
+				robot.encoderForwardDrive(-0.25,-15,5,this);
 
 				//robot.turnLeftAngle(0.2,89,this);
 				robot.turnRightAngle(0.2,89,this);
@@ -95,12 +95,12 @@ public class Bluebackdrop2 extends LinearOpMode {
 				//changed sign of speed and inches from this point forward
 				robot.encoderForwardDrive(-0.25,-10,5,this);
 				robot.encoderSideDrive(0.25,2,5,this);
-				robot.encoderForwardDrive(-0.25,-18,5,this);
-				robot.autopixel.setPosition(0.45);
+				robot.encoderForwardDrive(-0.25,-24,5,this);
+				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,2,5,this);
-				robot.encoderSideDrive(-0.2,-24,5,this);
+				robot.encoderSideDrive(-0.2,-12,5,this);
 
 
 				break;
@@ -114,18 +114,18 @@ public class Bluebackdrop2 extends LinearOpMode {
 				telemetry.addData("movement: ", "I will go to center");
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,34,5,this);
-				robot.encoderForwardDrive(-0.25,-10,5,this);
+				robot.encoderForwardDrive(-0.25,-12,5,this);
 
 
-				robot.turnRightAngle(0.2,89,this);
+				robot.turnRightAngle(0.2,90,this);
 				robot.encoderForwardDrive(-0.25,-30,5,this);
-				//robot.encoderSideDrive(-0.25,2,5,this);
-				robot.encoderForwardDrive(-0.25,-10.5,5,this);
-				robot.autopixel.setPosition(0.45);
+				robot.encoderSideDrive(-0.25,-2,5,this);
+				robot.encoderForwardDrive(-0.25,-14.5,5,this);
+				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,5,5,this);
-				robot.encoderSideDrive(-0.2,-35,5,this);
+				robot.encoderSideDrive(-0.2,-20,5,this);
 
 
 				break;
@@ -135,22 +135,22 @@ public class Bluebackdrop2 extends LinearOpMode {
 				// code to do if we saw the prop on the right
 				telemetry.addData("movement: ", "I will go right");
 				telemetry.update();
-				robot.encoderForwardDrive(0.25,27,5,this);
-				robot.encoderSideDrive(0.25,-12,5,this);
+				robot.encoderForwardDrive(0.25,28,5,this);
+				robot.encoderSideDrive(0.25,-13,5,this);
 				robot.encoderForwardDrive(-0.25,-3.5,5,this);
 				robot.encoderSideDrive(0.25,12,5,this);
 
 
 				robot.turnRightAngle(0.2,89,this);
 				robot.encoderForwardDrive(-0.25,-8,5,this);
-				robot.encoderSideDrive(0.25,7.5,5,this);
-				robot.encoderForwardDrive(-0.25,-36.5,5,this);
+				robot.encoderSideDrive(0.25,0,5,this);//edit
+				robot.encoderForwardDrive(-0.25,-37,5,this);
 
-				robot.autopixel.setPosition(0.45);
+				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 
-				robot.encoderForwardDrive(0.25,2,5,this);
+				robot.encoderForwardDrive(0.25,4,5,this);
 				robot.encoderSideDrive(-0.2,-24,5,this);
 
 

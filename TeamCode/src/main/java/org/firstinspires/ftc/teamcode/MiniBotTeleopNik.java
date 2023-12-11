@@ -20,7 +20,7 @@ public class MiniBotTeleopNik extends LinearOpMode{
     {
         robot.init(hardwareMap,this);
 
-        robot.autopixel.setPosition(0.05);
+       // robot.autopixel.setPosition(0.05);
 
 
         waitForStart();
@@ -67,8 +67,8 @@ public class MiniBotTeleopNik extends LinearOpMode{
             if (gamepad2.y&& gamepad2.left_bumper) robot.plane.setPower(-1);
             else robot.plane.setPower(0);
 
-            if (gamepad1.b) robot.autopixel.setPosition(0.5);
-            if (gamepad1.x) robot.autopixel.setPosition(0.05);
+           // if (gamepad1.b) robot.autopixel.setPosition(0.5);
+            //if (gamepad1.x) robot.autopixel.setPosition(0.05);
 
 
 
