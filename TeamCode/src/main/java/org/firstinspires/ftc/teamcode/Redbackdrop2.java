@@ -20,7 +20,8 @@ public class Redbackdrop2 extends LinearOpMode {
 		// HSV takes the form: (HUE, SATURATION, VALUE)
 		// which means to select our colour, only need to change HUE
 		// the domains are: ([0, 180], [0, 255], [0, 255])
-		// this is tuned to detect red, so you will need to experiment to fine tune it for your robot
+		// this is tuned to detect red, so you wil
+		// l need to experiment to fine tune it for your robot
 		// and experiment to fine tune it for blue
 		robot.init(hardwareMap, this);
 		robot.autopixel.setPosition(0);
@@ -87,18 +88,18 @@ public class Redbackdrop2 extends LinearOpMode {
 
 
 
-				robot.encoderForwardDrive(-0.25,-3.5,5,this);
-				robot.encoderSideDrive(-0.25,-12,5,this);
+				robot.encoderForwardDrive(-0.25,-2.8,5,this);
+				robot.encoderSideDrive(-0.25,-18,5,this);
 				robot.turnLeftAngle(0.2,89,this);
 				robot.encoderForwardDrive(-0.25,-8,5,this);
 
 				//rest we had before
-				robot.encoderSideDrive(-0.25,-22,5,this);
-				robot.encoderForwardDrive(-0.25,-35.5,5,this);
-				robot.autopixel.setPosition(0.45);
+				robot.encoderSideDrive(-0.25,-17,5,this);
+				robot.encoderForwardDrive(-0.25,-29.5,5,this);
+				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
-				robot.encoderForwardDrive(0.25,2,5,this);
+				robot.encoderForwardDrive(0.25,3,5,this);
 				robot.encoderSideDrive(0.2,24,5,this);
 
 
@@ -112,13 +113,13 @@ public class Redbackdrop2 extends LinearOpMode {
 				// code to do if we saw the prop on the middle
 				telemetry.addData("movement: ", "I will go to center");
 				telemetry.update();
-				robot.encoderForwardDrive(0.25,34,5,this);
+				robot.encoderForwardDrive(0.25,34.5,5,this);
 				robot.encoderForwardDrive(-0.25,-10,5,this);
 				robot.turnLeftAngle(0.2,89,this);
 				robot.encoderForwardDrive(-0.25,-30,5,this);
-				robot.encoderSideDrive(-0.25,-18,5,this);
-				robot.encoderForwardDrive(-0.25,-10.5,5,this);
-				robot.autopixel.setPosition(0.45);
+				robot.encoderSideDrive(-0.25,-12,5,this);
+				robot.encoderForwardDrive(-0.25,-13.5,5,this);
+				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,2,5,this);
@@ -137,9 +138,9 @@ public class Redbackdrop2 extends LinearOpMode {
 				robot.encoderForwardDrive(-0.25,-10,5,this);
 				robot.turnLeftAngle(0.2,89,this);
 				robot.encoderForwardDrive(-0.25,-10,5,this);
-				robot.encoderSideDrive(-0.25,-17,5,this);
+				robot.encoderSideDrive(-0.25,-14,5,this);
 				robot.encoderForwardDrive(-0.25,-32.5,5,this);
-				robot.autopixel.setPosition(0.45);
+				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,2,5,this);
