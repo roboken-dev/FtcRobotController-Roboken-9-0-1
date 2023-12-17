@@ -7,8 +7,8 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.opencv.core.Scalar;
 
-@Autonomous(name="Redbackdrop2")
-public class Redbackdrop2 extends LinearOpMode {
+@Autonomous(name="Redbackdrop2AltPark")
+public class Redbackdrop2AltPark extends LinearOpMode {
 	private VisionPortal visionPortal;
 	private ColourMassDetectionProcessor colourMassDetectionProcessor;
 	minibot robot = new minibot();
@@ -100,7 +100,7 @@ public class Redbackdrop2 extends LinearOpMode {
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,4,5,this);
-				robot.encoderSideDrive(0.2,24,5,this);
+				robot.encoderSideDrive(0.2,-10,5,this);
 
 
 				break;
@@ -123,7 +123,7 @@ public class Redbackdrop2 extends LinearOpMode {
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,3,5,this);
-				robot.encoderSideDrive(-0.2,35,5,this);
+				robot.encoderSideDrive(-0.2,-15,5,this);
 
 
 				break;
@@ -144,7 +144,7 @@ public class Redbackdrop2 extends LinearOpMode {
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,3,5,this);
-				robot.encoderSideDrive(0.2,24,5,this);
+				robot.encoderSideDrive(0.2,-10,5,this);
 
 
 				break;
