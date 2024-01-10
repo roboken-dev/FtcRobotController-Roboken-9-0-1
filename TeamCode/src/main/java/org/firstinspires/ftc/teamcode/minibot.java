@@ -39,6 +39,8 @@ public class minibot {
     public DcMotor motorLeft;
     public DcMotor motorRight;
 
+    public DcMotor arm;
+
     public Servo autopixel;
     public Servo wrist;
     public CRServo plane;
@@ -74,6 +76,7 @@ public class minibot {
         motorBack = hwMap.dcMotor.get("motorBack");
         motorLeft = hwMap.dcMotor.get("motorLeft");
         motorRight =hwMap.dcMotor.get("motorRight");
+        arm =hwMap.dcMotor.get("arm");
 
         autopixel = hwMap.servo.get("autopixel");
         wrist = hwMap.servo.get("wrist");
@@ -89,6 +92,7 @@ public class minibot {
         motorRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         motorLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         motorBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;
         imu = hwMap.get(BNO055IMU.class, "imu");
