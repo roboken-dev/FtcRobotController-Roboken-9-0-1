@@ -37,7 +37,8 @@ public class AudienceRed extends LinearOpMode {
 				() -> 426 // the left dividing line, in this case the right third of the frame
 		);
 		visionPortal = new VisionPortal.Builder()
-				.setCamera(hardwareMap.get(WebcamName.class, "Webcam 1")) // the camera on your robot is named "Webcam 1" by default
+				.setCamera(hardwareMap.
+						get(WebcamName.class, "Webcam 1")) // the camera on your robot is named "Webcam 1" by default
 				.addProcessor(colourMassDetectionProcessor)
 				.build();
 		
