@@ -94,7 +94,7 @@ public class Bluebackdrop2 extends LinearOpMode {
 
 				//changed sign of speed and inches from this point forward
 				robot.encoderForwardDrive(-0.25,-10,5,this);
-				robot.encoderSideDrive(0.25,2,5,this);
+				robot.encoderSideDrive(0.25,-3,5.,this); //change
 				robot.encoderForwardDrive(-0.25,-24,5,this);
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
@@ -119,13 +119,13 @@ public class Bluebackdrop2 extends LinearOpMode {
 
 				robot.turnRightAngle(0.2,90,this);
 				robot.encoderForwardDrive(-0.25,-30,5,this);
-				robot.encoderSideDrive(-0.25,-2,5,this);
+				robot.encoderSideDrive(-0.25,-3,5,this);
 				robot.encoderForwardDrive(-0.25,-14.5,5,this);
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,5,5,this);
-				robot.encoderSideDrive(-0.2,-20,5,this);
+				robot.encoderSideDrive(-0.2,-15,5,this);
 
 
 				break;
@@ -144,14 +144,14 @@ public class Bluebackdrop2 extends LinearOpMode {
 				robot.turnRightAngle(0.2,89,this);
 				robot.encoderForwardDrive(-0.25,-5,5,this);
 				robot.encoderSideDrive(0.25,0,5,this);//edit
-				robot.encoderForwardDrive(-0.25,-34,5,this);
+				robot.encoderForwardDrive(-0.25,-33,5,this);
 
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 
 				robot.encoderForwardDrive(0.25,4,5,this);
-				robot.encoderSideDrive(-0.2,-22,5,this);
+				robot.encoderSideDrive(-0.2,-20,5,this);
 
 
 				break;

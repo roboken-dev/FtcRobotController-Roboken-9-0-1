@@ -25,7 +25,7 @@ public class Redbackdrop2 extends LinearOpMode {
 		// and experiment to fine tune it for blue
 		robot.init(hardwareMap, this);
 		robot.autopixel.setPosition(0);
-		robot.wrist.setPosition(0.2);
+		//robot.wrist.setPosition(0.2);
 		Scalar lower = new Scalar(160, 100, 100); // the lower hsv threshold for your detection
 		Scalar upper = new Scalar(180, 255, 255); // the upper hsv threshold for your detection
 		double minArea = 100; // the minimum area for the detection to consider for your prop
@@ -95,7 +95,7 @@ public class Redbackdrop2 extends LinearOpMode {
 
 				//rest we had before
 				robot.encoderSideDrive(-0.25,-17,5,this);
-				robot.encoderForwardDrive(-0.25,-29.5,5,this);
+				robot.encoderForwardDrive(-0.25,-31,5,this);
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
@@ -117,7 +117,7 @@ public class Redbackdrop2 extends LinearOpMode {
 				robot.encoderForwardDrive(-0.25,-10,5,this);
 				robot.turnLeftAngle(0.2,89,this);
 				robot.encoderForwardDrive(-0.25,-30,5,this);
-				robot.encoderSideDrive(-0.25,-12,5,this);
+				robot.encoderSideDrive(-0.25,-11,5,this);
 				robot.encoderForwardDrive(-0.25,-13.5,5,this);
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
@@ -134,7 +134,7 @@ public class Redbackdrop2 extends LinearOpMode {
 				telemetry.addData("movement: ", "I will go right");
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,27,5,this);
-				robot.encoderSideDrive(0.25,-14,5,this);
+				robot.encoderSideDrive(0.25,-12,5,this);
 				robot.encoderForwardDrive(-0.25,-10,5,this);
 				robot.turnLeftAngle(0.2,89,this);
 				robot.encoderForwardDrive(-0.25,-10,5,this);

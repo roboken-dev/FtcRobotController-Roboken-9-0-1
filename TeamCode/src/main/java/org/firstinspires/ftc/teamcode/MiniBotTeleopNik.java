@@ -12,7 +12,8 @@ public class MiniBotTeleopNik extends LinearOpMode{
 
     private double speedControl = 0.5;
     private double turnControl = 0.5;
-    double wristPosition = 0.3;
+    double wristPosition = 0.75;
+    double armControl = -0.2;
     @Override
 
 
@@ -82,7 +83,10 @@ public class MiniBotTeleopNik extends LinearOpMode{
             if(gamepad2.right_bumper) wristPosition= 0.5-Math.abs(gamepad2.right_stick_y)*0.5;
             robot.wrist.setPosition(wristPosition);
 
-            robot.arm.setPower(-0.20*gamepad2.right_stick_y+.05);
+            robot.arm.setPower(armControl*gamepad2.right_stick_y+.05);
+
+            if (gamepad2.left_trigger>0) armControl=-0.4;
+            else armControl=-0.2;
 
 
 
