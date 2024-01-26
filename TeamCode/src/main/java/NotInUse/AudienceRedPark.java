@@ -1,16 +1,18 @@
-package org.firstinspires.ftc.teamcode;
+package NotInUse;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
+import org.firstinspires.ftc.teamcode.ColourMassDetectionProcessor;
+import org.firstinspires.ftc.teamcode.minibot;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.opencv.core.Scalar;
 
 @Disabled
-@Autonomous(name="AudienceRed if doesn't see")
-public class AudienceRedAltColorSense extends LinearOpMode {
+@Autonomous(name="AudienceRedPark")
+public class AudienceRedPark extends LinearOpMode {
 	private VisionPortal visionPortal;
 	private ColourMassDetectionProcessor colourMassDetectionProcessor;
 	minibot robot = new minibot();
@@ -86,8 +88,8 @@ public class AudienceRedAltColorSense extends LinearOpMode {
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,28.5,5,this);
 				robot.encoderSideDrive(0.25,12.5,5,this);
-				robot.encoderForwardDrive(-0.25,-3.5,5,this);
-
+				robot.encoderForwardDrive(-0.25,-26.5,5,this);
+				robot.encoderSideDrive(-0.25,-110,5,this);
 
 				break;
 
@@ -100,8 +102,8 @@ public class AudienceRedAltColorSense extends LinearOpMode {
 				telemetry.addData("movement: ", "I will go to center");
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,34,5,this);
-				robot.encoderForwardDrive(-0.25,-10,5,this);
-
+				robot.encoderForwardDrive(-0.25,-32,5,this);
+				robot.encoderSideDrive(-0.25,-98,5, this);
 
 				break;
 
@@ -113,7 +115,7 @@ public class AudienceRedAltColorSense extends LinearOpMode {
 				robot.encoderForwardDrive(0.25,27,5,this);
 				robot.encoderSideDrive(0.25,-14,5,this);
 				robot.encoderForwardDrive(-0.25,-2,5,this);
-
+				robot.encoderSideDrive(0.25,-84,5,this);
 
 				break;
 

@@ -1,16 +1,19 @@
-package org.firstinspires.ftc.teamcode;
+package NotInUse;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
+import org.firstinspires.ftc.teamcode.ColourMassDetectionProcessor;
+import org.firstinspires.ftc.teamcode.minibot;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.opencv.core.Scalar;
 
+
 @Disabled
-@Autonomous(name="Redbackdrop2AltPark")
-public class Redbackdrop2AltPark extends LinearOpMode {
+@Autonomous(name="Redbackdrop2 if doesn't see")
+public class Redbackdrop2altColorSense extends LinearOpMode {
 	private VisionPortal visionPortal;
 	private ColourMassDetectionProcessor colourMassDetectionProcessor;
 	minibot robot = new minibot();
@@ -22,14 +25,13 @@ public class Redbackdrop2AltPark extends LinearOpMode {
 		// HSV takes the form: (HUE, SATURATION, VALUE)
 		// which means to select our colour, only need to change HUE
 		// the domains are: ([0, 180], [0, 255], [0, 255])
-		// this is tuned to detect red, so you wil
-		// l need to experiment to fine tune it for your robot
+		// this is tuned to detect red, so you will need to experiment to fine tune it for your robot
 		// and experiment to fine tune it for blue
 		robot.init(hardwareMap, this);
 		robot.autopixel.setPosition(0);
 		robot.wrist.setPosition(0.2);
-		Scalar lower = new Scalar(160, 100, 100); // the lower hsv threshold for your detection
-		Scalar upper = new Scalar(180, 255, 255); // the upper hsv threshold for your detection
+		Scalar lower = new Scalar(0, 100, 100); // the lower hsv threshold for your detection
+		Scalar upper = new Scalar(10, 255, 255); // the upper hsv threshold for your detection
 		double minArea = 100; // the minimum area for the detection to consider for your prop
 		
 		colourMassDetectionProcessor = new ColourMassDetectionProcessor(
@@ -101,8 +103,8 @@ public class Redbackdrop2AltPark extends LinearOpMode {
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
-				robot.encoderForwardDrive(0.25,4,5,this);
-				robot.encoderSideDrive(0.2,-10,5,this);
+				robot.encoderForwardDrive(0.25,3,5,this);
+				robot.encoderSideDrive(0.2,24,5,this);
 
 
 				break;
@@ -124,8 +126,8 @@ public class Redbackdrop2AltPark extends LinearOpMode {
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
-				robot.encoderForwardDrive(0.25,3,5,this);
-				robot.encoderSideDrive(-0.2,-15,5,this);
+				robot.encoderForwardDrive(0.25,2,5,this);
+				robot.encoderSideDrive(-0.2,35,5,this);
 
 
 				break;
@@ -145,13 +147,11 @@ public class Redbackdrop2AltPark extends LinearOpMode {
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
-				robot.encoderForwardDrive(0.25,3,5,this);
-				robot.encoderSideDrive(0.2,-10,5,this);
+				robot.encoderForwardDrive(0.25,2,5,this);
+				robot.encoderSideDrive(0.2,24,5,this);
 
 
 				break;
-
-
 		}
 
 		colourMassDetectionProcessor.close();

@@ -1,17 +1,18 @@
-package org.firstinspires.ftc.teamcode;
+package NotInUse;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
+import org.firstinspires.ftc.teamcode.ColourMassDetectionProcessor;
+import org.firstinspires.ftc.teamcode.minibot;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.opencv.core.Scalar;
 
 @Disabled
-@Autonomous(name="color detection test")
-public class ColourMassDetectionLinearOpMode extends LinearOpMode {
+@Autonomous(name="Bluebackdrop")
+public class Bluebackdrop extends LinearOpMode {
 	private VisionPortal visionPortal;
 	private ColourMassDetectionProcessor colourMassDetectionProcessor;
 	minibot robot = new minibot();
@@ -26,8 +27,10 @@ public class ColourMassDetectionLinearOpMode extends LinearOpMode {
 		// this is tuned to detect red, so you will need to experiment to fine tune it for your robot
 		// and experiment to fine tune it for blue
 		robot.init(hardwareMap, this);
-		Scalar lower = new Scalar(150, 100, 100); // the lower hsv threshold for your detection
-		Scalar upper = new Scalar(180, 255, 255); // the upper hsv threshold for your detection
+		robot.autopixel.setPosition(0);
+		robot.wrist.setPosition(0.2);
+		Scalar lower = new Scalar(100, 100, 100); // the lower hsv threshold for your detection
+		Scalar upper = new Scalar(130, 255, 255); // the upper hsv threshold for your detection
 		double minArea = 100; // the minimum area for the detection to consider for your prop
 		
 		colourMassDetectionProcessor = new ColourMassDetectionProcessor(
@@ -56,7 +59,7 @@ public class ColourMassDetectionLinearOpMode extends LinearOpMode {
 		telemetry.addData("Camera State", visionPortal.getCameraState());
 		telemetry.addData("Currently Detected Mass Center", "x: " + colourMassDetectionProcessor.getLargestContourX() + ", y: " + colourMassDetectionProcessor.getLargestContourY());
 		telemetry.addData("Currently Detected Mass Area", colourMassDetectionProcessor.getLargestContourArea());
-		 telemetry.update();
+		telemetry.update();
 	}
 	
 
@@ -84,25 +87,83 @@ public class ColourMassDetectionLinearOpMode extends LinearOpMode {
 				// code to do if we saw the prop on the left
 				telemetry.addData("movement: ", "I will go left");
 				telemetry.update();
-				sleep(3000);
-				robot.encoderForwardDrive(0.25,-3,5,this);
-				robot.encoderSideDrive(0.25,24,5,this);
-				robot.encoderForwardDrive(0.25,-28,5,this);
+
+				robot.encoderForwardDrive(0.25,27,5,this);
+				robot.encoderSideDrive(0.25,11.5,5,this);
+				robot.encoderForwardDrive(-0.25,-10,5,this);
+
+				robot.turnLeftAngle(0.2,89,this);
+
+				robot.encoderForwardDrive(0.25,10,5,this);
+				robot.encoderSideDrive(-0.25,-2,5,this);
+				robot.encoderForwardDrive(0.25,18,5,this);
+				robot.autopixel.setPosition(0.45);
+				sleep(2000);
+				robot.autopixel.setPosition(0);
+				robot.encoderForwardDrive(-0.25,-2,5,this);
+				robot.encoderSideDrive(0.2,24,5,this);
+
 
 				break;
+
+
 			case UNFOUND: // we can also just add the unfound case here to do fallthrough intstead of the overriding method above, whatever you prefer!
+
+
 			case MIDDLE:
 				// code to do if we saw the prop on the middle
 				telemetry.addData("movement: ", "I will go to center");
 				telemetry.update();
-				sleep(3000);
+				robot.encoderForwardDrive(0.25,34,5,this);
+				robot.encoderForwardDrive(-0.25,-10,5,this);
+				robot.turnLeftAngle(0.2,89,this);
+				robot.encoderForwardDrive(0.25,30,5,this);
+				//robot.encoderSideDrive(-0.25,2,5,this);
+				robot.encoderForwardDrive(0.25,10.5,5,this);
+				robot.autopixel.setPosition(0.45);
+				sleep(2000);
+				robot.autopixel.setPosition(0);
+				robot.encoderForwardDrive(-0.25,-3,5,this);
+				robot.encoderSideDrive(0.2,35,5,this);
+
+
 				break;
+
+
 			case RIGHT:
 				// code to do if we saw the prop on the right
 				telemetry.addData("movement: ", "I will go right");
 				telemetry.update();
-				sleep(3000);
+				robot.encoderForwardDrive(0.25,27,5,this);
+				robot.encoderSideDrive(0.25,-14,5,this);
+
+				/*
+				This what we had. This will crash into the post.
+
+				robot.encoderForwardDrive(-0.25,-10,5,this);
+				robot.turnRightAngle(0.2,89,this);
+				robot.encoderForwardDrive(0.25,20,5,this);
+				*/
+
+				//this is alternate
+				robot.encoderForwardDrive(-0.25,-3.5,5,this);
+				robot.encoderSideDrive(0.25,12,5,this);
+				robot.turnLeftAngle(0.2,89,this);
+				robot.encoderForwardDrive(0.25,8,5,this);
+
+				//rest we had before
+				robot.encoderSideDrive(-0.25,-7.5,5,this);
+				robot.encoderForwardDrive(0.25,36.5,5,this);
+				robot.autopixel.setPosition(0.45);
+				sleep(2000);
+				robot.autopixel.setPosition(0);
+				robot.encoderForwardDrive(-0.25,-2,5,this);
+				robot.encoderSideDrive(0.2,24,5,this);
+
+
 				break;
+
+
 		}
 
 		colourMassDetectionProcessor.close();

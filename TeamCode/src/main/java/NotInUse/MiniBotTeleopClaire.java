@@ -1,8 +1,10 @@
-package org.firstinspires.ftc.teamcode;
+package NotInUse;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
+import org.firstinspires.ftc.teamcode.minibot;
 
 @Disabled
 @TeleOp(name="MiniTeleopClaire")
