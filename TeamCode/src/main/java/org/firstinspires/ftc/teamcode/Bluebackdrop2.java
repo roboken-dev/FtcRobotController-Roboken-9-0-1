@@ -24,7 +24,7 @@ public class Bluebackdrop2 extends LinearOpMode {
 		// and experiment to fine tune it for blue
 		robot.init(hardwareMap, this);
 		robot.autopixel.setPosition(0);
-		robot.wrist.setPosition(0.2);
+		//robot.wrist.setPosition(0.2);
 		Scalar lower = new Scalar(100, 100, 100); // the lower hsv threshold for your detection
 		Scalar upper = new Scalar(130, 255, 255); // the upper hsv threshold for your detection
 		double minArea = 100; // the minimum area for the detection to consider for your prop

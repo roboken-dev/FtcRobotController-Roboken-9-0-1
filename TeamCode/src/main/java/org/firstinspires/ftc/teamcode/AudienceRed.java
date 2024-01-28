@@ -25,9 +25,9 @@ public class AudienceRed extends LinearOpMode {
 		robot.init(hardwareMap, this);
 		robot.autopixel.setPosition(0);
 		robot.wrist.setPosition(0.2);
-		Scalar lower = new Scalar(160, 100, 100); // the lower hsv threshold for your detection
-		Scalar upper = new Scalar(180, 255, 255); // the upper hsv threshold for your detection
-		double minArea = 100; // the minimum area for the detection to consider for your prop
+		Scalar lower = new Scalar(0, 100, 100); // the lower hsv threshold for your detection
+		Scalar upper = new Scalar(10, 255, 255); // the upper hsv threshold for your detection
+		double minArea = 100; // th6e minimum area for the detection to consider for your prop
 		
 		colourMassDetectionProcessor = new ColourMassDetectionProcessor(
 				lower,
