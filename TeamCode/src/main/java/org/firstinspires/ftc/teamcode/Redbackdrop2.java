@@ -84,12 +84,12 @@ public class Redbackdrop2 extends LinearOpMode {
 				telemetry.addData("movement: ", "I will go left");
 				telemetry.update();
 				robot.encoderForwardDrive(0.25,28.5,5,this);
-				robot.encoderSideDrive(0.25,12.5,5,this);
+				robot.encoderSideDrive(0.25,10.5,5,this);
 
 
 
 				robot.encoderForwardDrive(-0.25,-2.8,5,this);
-				robot.encoderSideDrive(-0.25,-18,5,this);
+				robot.encoderSideDrive(-0.25,-19,5,this);
 				robot.turnLeftAngle(0.2,89,this);
 				robot.encoderForwardDrive(-0.25,-8,5,this);
 
