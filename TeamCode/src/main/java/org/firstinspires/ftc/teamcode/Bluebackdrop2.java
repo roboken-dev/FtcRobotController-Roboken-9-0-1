@@ -100,7 +100,7 @@ public class Bluebackdrop2 extends LinearOpMode {
 				sleep(2000);
 				robot.autopixel.setPosition(0);
 				robot.encoderForwardDrive(0.25,2,5,this);
-				robot.encoderSideDrive(-0.2,-12,5,this);
+				robot.encoderSideDrive(-0.2,-7,5,this);
 
 
 				break;
@@ -120,7 +120,7 @@ public class Bluebackdrop2 extends LinearOpMode {
 				robot.turnRightAngle(0.2,90,this);
 				robot.encoderForwardDrive(-0.25,-30,5,this);
 				robot.encoderSideDrive(-0.25,-3,5,this);
-				robot.encoderForwardDrive(-0.25,-14.5,5,this);
+				robot.encoderForwardDrive(-0.25,-15.5,5,this);
 				robot.autopixel.setPosition(0.55);
 				sleep(2000);
 				robot.autopixel.setPosition(0);
