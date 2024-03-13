@@ -38,7 +38,7 @@ public class minibot {
     public DcMotor motorBack;
     public DcMotor motorLeft;
     public DcMotor motorRight;
-
+    public DcMotor hang;
     public DcMotor arm;
 
     public Servo autopixel;
@@ -76,6 +76,7 @@ public class minibot {
         motorBack = hwMap.dcMotor.get("motorBack");
         motorLeft = hwMap.dcMotor.get("motorLeft");
         motorRight =hwMap.dcMotor.get("motorRight");
+        hang = hwMap.dcMotor.get("hang");
         arm =hwMap.dcMotor.get("arm");
 
         autopixel = hwMap.servo.get("autopixel");

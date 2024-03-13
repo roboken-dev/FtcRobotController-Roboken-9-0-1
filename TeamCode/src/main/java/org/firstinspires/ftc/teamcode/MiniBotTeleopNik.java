@@ -76,6 +76,8 @@ public class MiniBotTeleopNik extends LinearOpMode{
 
 
 
+
+
             if (gamepad2.dpad_up)  wristPosition = 0.5;
             if (gamepad2.dpad_right) wristPosition = 0.1;
             if (gamepad2.dpad_left) wristPosition = 0.1;
@@ -87,6 +89,12 @@ public class MiniBotTeleopNik extends LinearOpMode{
 
             if (gamepad2.left_trigger>0) armControl=-0.4;
             else armControl=-0.2;
+
+            if (gamepad1.right_trigger!=0) robot.hang.setPower(-gamepad1.right_trigger);
+            else if (gamepad1.left_trigger!=0) robot.hang.setPower(gamepad1.left_trigger);
+            else robot.hang.setPower(0);
+
+
 
 
 
